@@ -16,8 +16,6 @@ static int	ft_count_str(const char *str, char car);
 
 static int	ft_strlen_char(const char *src, char car);
 
-static void	ft_free_arr(char **arr);
-
 char	**ft_split(char const *s, char c)
 {
 	char	**ret;
@@ -78,7 +76,7 @@ static int	ft_strlen_char(const char *src, char car)
 	return (index);
 }
 
-static void	ft_free_arr(char **arr)
+void	ft_free_arr(char **arr)
 {
 	int	index;
 

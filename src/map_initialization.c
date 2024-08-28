@@ -4,7 +4,7 @@ static char *form_map_line(int fd, char *map_line);
 
 char    **map_init(char *map_addr)
 {
-//    char    **map;
+    char    **map;
     char    *map_line;
     int     fd;
 
@@ -14,8 +14,13 @@ char    **map_init(char *map_addr)
     map_line = NULL;
     map_line = form_map_line(fd, map_line);
     ft_printf("%s\n", map_line);
+    validate_cep(map_line);
+    map = ft_split(map_line, '\n');
     free(map_line);
-    return (NULL);
+    if (!map)
+        error("Malloc error: impossible to create map\n");
+    validate_map_arr(map);
+    return (map);
 }
 
 static char *form_map_line(int fd, char *map_line)
