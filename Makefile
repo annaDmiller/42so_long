@@ -4,8 +4,8 @@ CC = cc
 
 CC_FLAGS = -Wall -Werror -Wextra -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -g3
 
-SRCS = main.c error.c map_initialization.c str_realloc.c mao_validation.c map_validation_border.c \
-		map_validation_collectibles.c
+SRCS = main.c error.c map_initialization.c str_realloc.c map_validation.c map_validation_border.c \
+		map_validation_collectibles.c create_temp_arr_for_validation.c
 
 DIR_SRCS = src/
 

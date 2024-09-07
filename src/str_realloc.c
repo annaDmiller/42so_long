@@ -7,6 +7,7 @@ char    *str_realloc(char *src, size_t size)
     new_str = (char *) malloc(size * sizeof(char));
     if (!new_str)
         return (free(src), NULL);
+    new_str[0] = '\0';
     ft_strlcat(new_str, src, size);
     if (!src)
         new_str[0] = '\0';

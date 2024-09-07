@@ -7,19 +7,20 @@ char    **map_init(char *map_addr)
     char    **map;
     char    *map_line;
     int     fd;
+    int     quan_c;
 
     fd = open(map_addr, O_RDONLY);
     if  (fd == -1)
         error("Not able to open the file\n");
     map_line = NULL;
     map_line = form_map_line(fd, map_line);
-    ft_printf("%s\n", map_line);
-    validate_cep(map_line);
+    validate_letters(map_line);
+    quan_c = validate_cep(map_line);
     map = ft_split(map_line, '\n');
     free(map_line);
     if (!map)
         error("Malloc error: impossible to create map\n");
-    validate_map_arr(map);
+    validate_map_arr(&map, quan_c);
     return (map);
 }
 
