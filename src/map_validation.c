@@ -1,6 +1,6 @@
 #include "so_long.h"
 
-static void  validate_rect(char ***map);
+static void  validate_rect(char **map);
 
 static int  is_valid_let(char car);
 
@@ -57,7 +57,7 @@ static int  is_valid_let(char car)
     return (1);
 }
 
-void    validate_map_arr(char ***map, int quan_c)
+void    validate_map_arr(char **map, int quan_c)
 {
     validate_rect(map);
     validate_border(map);
@@ -65,20 +65,20 @@ void    validate_map_arr(char ***map, int quan_c)
     return ;
 }
 
-static void  validate_rect(char ***map)
+static void  validate_rect(char **map)
 {
     int ind_s;
     size_t len_str;
     size_t len_first;
 
     ind_s = 1;
-    len_first = ft_strlen((*map)[0]);
-    while ((*map)[ind_s])
+    len_first = ft_strlen(map[0]);
+    while (map[ind_s])
     {
-        len_str = ft_strlen((*map)[ind_s]);
+        len_str = ft_strlen(map[ind_s]);
         if (len_str != len_first)
         {
-            ft_free_arr((*map));
+            ft_free_arr(map);
             error("Incorrect map: map isn't rectangular\n");
         }
         ind_s++;

@@ -20,7 +20,7 @@ char    **map_init(char *map_addr)
     free(map_line);
     if (!map)
         error("Malloc error: impossible to create map\n");
-    validate_map_arr(&map, quan_c);
+    validate_map_arr(map, quan_c);
     return (map);
 }
 

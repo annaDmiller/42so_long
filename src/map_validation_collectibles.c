@@ -4,7 +4,7 @@ static int  fill_flood(char **map, int x, int y, int *quan_c);
 
 static void    find_start(char **map, int *start_x, int *start_y);
 
-void    validate_collect(char ***map, int quan_c)
+void    validate_collect(char **map, int quan_c)
 {
     int quan_e;
     int start_x;
@@ -14,17 +14,17 @@ void    validate_collect(char ***map, int quan_c)
     start_x = 0;
     start_y = 0;
     copy_map = create_temp_map(map);
-    find_start(*map, &start_x, &start_y);
+    find_start(map, &start_x, &start_y);
     quan_e = fill_flood(copy_map, start_x, start_y, &quan_c);
     ft_free_arr(copy_map);
     if (quan_c != 0)
     {
-        ft_free_arr((*map));
+        ft_free_arr(map);
         error("Incorrect map: inachievable collectibles\n");
     }
     if (quan_e != 1)
     {
-        ft_free_arr((*map));
+        ft_free_arr(map);
         error("Incorrect map: no way out\n");
     }
     return ;
