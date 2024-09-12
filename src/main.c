@@ -11,6 +11,7 @@ int main(int argc, char **argv)
     map = map_init(*(argv + 1));
     if (!map)
         return (1);
+    screen_logic(map);
     free(map);
     return (0);
 }

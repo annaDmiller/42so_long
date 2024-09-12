@@ -52,7 +52,7 @@ void    validate_letters(char *map_line)
 static int  is_valid_let(char car)
 {
     if (car == '1' || car == '0' || car == 'E'
-        || car == 'C' || car == 'P')
+        || car == 'C' || car == 'P' || car == '\n')
         return (0);
     return (1);
 }
