@@ -33,12 +33,12 @@ static void	draw_items(t_total *tot, int x, int y)
 {
 	if (tot->map[y][x] == 'C')
 		mlx_put_image_to_window(tot->mlx->mlx, tot->mlx->win,
-			tot->img->coll->img, x * 50 + 15, y * 50 + 15);
+			tot->img->coll->img, x * 50, y * 50);
 	if (tot->map[y][x] == 'P')
 		mlx_put_image_to_window(tot->mlx->mlx, tot->mlx->win,
-			tot->img->player->img, x * 50 + 3, y * 50 + 3);
+			tot->img->player->img, x * 50, y * 50);
 	if (tot->map[y][x] == 'E')
 		mlx_put_image_to_window(tot->mlx->mlx, tot->mlx->win,
-			tot->img->exit->img, x * 50 + 3, y * 50 + 3);
+			tot->img->exit->img, x * 50, y * 50);
 	return ;
 }
