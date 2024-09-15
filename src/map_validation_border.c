@@ -22,10 +22,7 @@ static void	validate_top_line(char **map)
 	while (map[0][++ind_c])
 	{
 		if (map[0][ind_c] != '1')
-		{
-			ft_free_arr(map);
-			error("Incorrect map: incorrect border\n");
-		}
+			err_arr("Incorrect map: incorrect border\n", map);
 	}
 	return ;
 }
@@ -42,10 +39,7 @@ static void	validate_middle(char **map)
 			break ;
 		end_s = ft_strlen(map[ind_s]);
 		if (map[ind_s][0] != '1' || map[ind_s][end_s - 1] != '1')
-		{
-			ft_free_arr(map);
-			error("Incorrect map: incorrect border\n");
-		}
+			err_arr("Incorrect map: incorrect border\n", map);
 	}
 	return ;
 }
@@ -63,10 +57,7 @@ static void	validate_bot_line(char **map)
 	while (map[last_s][++ind_c])
 	{
 		if (map[last_s][ind_c] != '1')
-		{
-			ft_free_arr(map);
-			error("Incorrect map: incorrect border\n");
-		}
+			err_arr("Incorrect map: incorrect border\n", map);
 	}
 	return ;
 }

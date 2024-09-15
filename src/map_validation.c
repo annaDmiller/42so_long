@@ -25,10 +25,7 @@ static void	validate_rect(char **map)
 	{
 		len_str = ft_strlen(map[ind_s]);
 		if (len_str != len_first)
-		{
-			ft_free_arr(map);
-			error("Incorrect map: map isn't rectangular\n");
-		}
+			err_arr("Incorrect map: map isn't rectangular\n", map);
 		ind_s++;
 	}
 	return ;

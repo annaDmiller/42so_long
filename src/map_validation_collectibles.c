@@ -18,15 +18,9 @@ void	validate_collect(char **map, int quan_c)
 	quan_e = fill_flood(copy_map, start_x, start_y, &quan_c);
 	ft_free_arr(copy_map);
 	if (quan_c != 0)
-	{
-		ft_free_arr(map);
-		error("Incorrect map: inachievable collectibles\n");
-	}
+		err_arr("Incorrect map: inachievable collectibles\n", map);
 	if (quan_e != 1)
-	{
-		ft_free_arr(map);
-		error("Incorrect map: no way out\n");
-	}
+		err_arr("Incorrect map: no way out\n", map);
 	return ;
 }
 
