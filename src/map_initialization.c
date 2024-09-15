@@ -18,6 +18,7 @@ char	**map_init(char *map_addr)
 	quan_c = validate_cep(map_line);
 	map = ft_split(map_line, '\n');
 	free(map_line);
+	close(fd);
 	if (!map)
 		error("Malloc error: impossible to create map\n");
 	validate_map_arr(map, quan_c);

@@ -1,6 +1,6 @@
 #include "so_long.h"
 
-static void	window_init(t_win *win);
+static void	window_init(t_win *win, char **map);
 static void	image_init(t_map_img *map_img, t_win *win, char **map);
 
 void	screen_logic(char **map)
@@ -9,7 +9,7 @@ void	screen_logic(char **map)
 	t_map_img	map_img;
 	t_total		total;
 
-	window_init(&win);
+	window_init(&win, map);
 	image_init(&map_img, &win, map);
 	total.img = &map_img;
 	total.mlx = &win;
@@ -20,10 +20,17 @@ void	screen_logic(char **map)
 	mlx_loop(win.mlx);
 }
 
-static void	window_init(t_win *win)
+static void	window_init(t_win *win, char **map)
 {
+	size_t	len_x;
+	int		height_y;
+
+	len_x = ft_strlen(*map);
+	height_y = 0;
+	while (map[height_y])
+		height_y++;
 	win->mlx = mlx_init();
-	win->win = mlx_new_window(win->mlx, LENGTH, HEIGHT, "SO_LONG");
+	win->win = mlx_new_window(win->mlx, len_x * 30, height_y * 30, "SO_LONG GAME");
 	return ;
 }
 
