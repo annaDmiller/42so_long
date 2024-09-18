@@ -8,14 +8,14 @@ void    player_move_up(t_total *tot)
     check_coll = -1;
     play = find_player(tot);
     if (play->x == -1)
-        err_screen("Unknown error: impossible to find player\n", tot);
+        err_screen("Unknown error: impossible to find player\n", tot, 1);
     if (tot->map[play->y - 1][play->x] == '1')
         return ;
     if (tot->map[play->y - 1][play->x] == 'C')
         g_collect++;
     g_steps++;
     if (tot->map[play->y - 1][play->x] == 'E')
-        check_coll = check_avail_exit(tot);
+        check_coll = check_avail_exit(tot, play);
     if (check_coll == 0)
         return ;
     tot->map[play->y - 1][play->x] = 'P';
@@ -33,14 +33,14 @@ void    player_move_down(t_total *tot)
     check_coll = -1;
     play = find_player(tot);
     if (play->x == -1)
-        err_screen("Unknown error: impossible to find player\n", tot);
+        err_screen("Unknown error: impossible to find player\n", tot, 1);
     if (tot->map[play->y + 1][play->x] == '1')
         return ;
     if (tot->map[play->y + 1][play->x] == 'C')
         g_collect++;
     g_steps++;
     if (tot->map[play->y + 1][play->x] == 'E')
-        check_coll = check_avail_exit(tot);
+        check_coll = check_avail_exit(tot, play);
     if (check_coll == 0)
         return ;
     tot->map[play->y + 1][play->x] = 'P';
@@ -58,14 +58,14 @@ void    player_move_left(t_total *tot)
     check_coll = -1;
     play = find_player(tot);
     if (play->x == -1)
-        err_screen("Unknown error: impossible to find player\n", tot);
+        err_screen("Unknown error: impossible to find player\n", tot, 1);
     if (tot->map[play->y][play->x - 1] == '1')
         return ;
     if (tot->map[play->y][play->x - 1] == 'C')
         g_collect++;
     g_steps++;
     if (tot->map[play->y][play->x - 1] == 'E')
-        check_coll = check_avail_exit(tot);
+        check_coll = check_avail_exit(tot, play);
     if (check_coll == 0)
         return ;
     tot->map[play->y][play->x - 1] = 'P';
@@ -83,14 +83,14 @@ void    player_move_right(t_total *tot)
     check_coll = -1;
     play = find_player(tot);
     if (play->x == -1)
-        err_screen("Unknown error: impossible to find player\n", tot);
+        err_screen("Unknown error: impossible to find player\n", tot, 1);
     if (tot->map[play->y][play->x + 1] == '1')
         return ;
     if (tot->map[play->y][play->x + 1] == 'C')
         g_collect++;
     g_steps++;
     if (tot->map[play->y][play->x + 1] == 'E')
-        check_coll = check_avail_exit(tot);
+        check_coll = check_avail_exit(tot, play);
     if (check_coll == 0)
         return ;
     tot->map[play->y][play->x + 1] = 'P';

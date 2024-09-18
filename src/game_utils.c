@@ -37,11 +37,11 @@ static t_point  *alloc_play(t_total *total)
 
     play = (t_point *) malloc(sizeof(t_point));
     if (!play)
-        err_screen("Malloc error\n", total);
+        err_screen("Malloc error\n", total, 1);
     return (play);
 }
 
-int check_avail_exit(t_total *tot)
+int check_avail_exit(t_total *tot, t_point *play)
 {
     int coll_left;
 
@@ -56,6 +56,7 @@ int check_avail_exit(t_total *tot)
     {
         ft_printf("Congrats! You collected %i bottles and left the game.\n",
             g_collect);
+        free(play);
         succ_exit("", tot);
     }
     return (1);
