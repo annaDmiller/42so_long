@@ -35,7 +35,7 @@ $(NAME): $(OBJ)  ${LIBFTA}
 	$(CC) $^ $(CC_FLAGS) $(LIBFT_FLAG) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CC_FLAGS) -c $< -o $@
+	$(CC) -Imlx_linux -c $< -o $@
 
 ${LIBFTA}:
 	$(MAKE) $(MAKE_FLAG) -C $(LIBFT_DIR)
