@@ -27,12 +27,17 @@ LIBFT_DIR = ./libft/
 
 LIBFTA = ./libft/libft.a
 
-.PHONY: all clean fclean re
+LIBX_DIR = ./mlx_linux/
 
-all: $(NAME)
+.PHONY: all clean fclean re libx libx_clean
 
-$(NAME): $(OBJ)  ${LIBFTA}
+all: libx $(NAME)
+
+$(NAME): $(OBJ)  ${LIBFTA} 
 	$(CC) $^ $(CC_FLAGS) $(LIBFT_FLAG) -o $(NAME)
+
+libx:
+	$(MAKE) $(MAKE_FLAG) -C $(LIBX_DIR)
 
 %.o: %.c
 	$(CC) -Imlx_linux -c $< -o $@
@@ -40,10 +45,13 @@ $(NAME): $(OBJ)  ${LIBFTA}
 ${LIBFTA}:
 	$(MAKE) $(MAKE_FLAG) -C $(LIBFT_DIR)
 
-clean:
+clean: libx_clean
 	$(RM) $(RM_FLAG) $(LIBFT_DIR)*.o $(DIR_SRCS)*.o
 
 fclean: clean
 	$(RM) $(RM_FLAG) $(LIBFTA) $(NAME)
+
+libx_clean:
+	$(MAKE) clean $(MAKE_FLAG) -C $(LIBX_DIR)
 
 re: fclean all
