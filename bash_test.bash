@@ -1,0 +1,19 @@
+#!/bin/bash
+valgrind ./so_long maps/incor_name.txt
+valgrind ./so_long not_existing_map.ber
+valgrind ./so_long maps/incor_empty.ber
+valgrind ./so_long maps/incor_n_lines.ber
+valgrind ./so_long maps/incor_let.ber
+valgrind ./so_long maps/incor_no_coll.ber
+valgrind ./so_long maps/incor_no_exit.ber
+valgrind ./so_long maps/incor_no_player.ber
+valgrind ./so_long maps/incor_rect.ber
+valgrind ./so_long maps/incor_size.ber
+valgrind ./so_long maps/incor_no_path_to_exit.ber
+valgrind ./so_long maps/incor_coll.ber
+valgrind ./so_long maps/incor_dupl.ber
+valgrind ./so_long maps/cor_tiny.ber
+valgrind ./so_long maps/cor_small.ber
+valgrind ./so_long maps/cor_av.ber
+valgrind ./so_long maps/cor_big.ber
+valgrind ./so_long maps/cor_max.ber
