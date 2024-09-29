@@ -10,8 +10,8 @@
 # include "stdio.h"
 # include "string.h"
 # include "../mlx_linux/mlx.h"
-# define HEIGHT_MAX 750
-# define LENGTH_MAX 1320
+# define HEIGHT_MAX 1020
+# define LENGTH_MAX 1920
 # define ESC 65307
 # define UP 65362
 # define DOWN 65364
