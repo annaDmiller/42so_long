@@ -29,10 +29,10 @@
 # define DOWN 65364
 # define LEFT 65361
 # define RIGHT 65363
-# define W 1731
-# define D 1751
-# define A 1734
-# define S 1753
+# define W 119
+# define D 100
+# define A 97
+# define S 115
 
 typedef struct s_win
 {
