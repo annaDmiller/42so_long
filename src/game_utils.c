@@ -66,6 +66,7 @@ int	check_avail_exit(t_total *tot, t_point *play)
 	}
 	if (coll_left == 0)
 	{
+		ft_printf("Number of steps: %u\n", ++g_steps);
 		ft_printf("Congrats! You collected %i bottles and left the game.\n",
 			g_collect);
 		free(play);
