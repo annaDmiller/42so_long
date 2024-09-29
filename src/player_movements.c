@@ -14,6 +14,7 @@ void    player_move_up(t_total *tot)
     if (tot->map[play->y - 1][play->x] == 'C')
         g_collect++;
     g_steps++;
+	ft_printf("Number of steps: %u\n", g_steps);
     if (tot->map[play->y - 1][play->x] == 'E')
         check_coll = check_avail_exit(tot, play);
     if (check_coll == 0)
@@ -39,6 +40,7 @@ void    player_move_down(t_total *tot)
     if (tot->map[play->y + 1][play->x] == 'C')
         g_collect++;
     g_steps++;
+	ft_printf("Number of steps: %u\n", g_steps);
     if (tot->map[play->y + 1][play->x] == 'E')
         check_coll = check_avail_exit(tot, play);
     if (check_coll == 0)
@@ -64,6 +66,7 @@ void    player_move_left(t_total *tot)
     if (tot->map[play->y][play->x - 1] == 'C')
         g_collect++;
     g_steps++;
+	ft_printf("Number of steps: %u\n", g_steps);
     if (tot->map[play->y][play->x - 1] == 'E')
         check_coll = check_avail_exit(tot, play);
     if (check_coll == 0)
@@ -89,6 +92,7 @@ void    player_move_right(t_total *tot)
     if (tot->map[play->y][play->x + 1] == 'C')
         g_collect++;
     g_steps++;
+	ft_printf("Number of steps: %u\n", g_steps);
     if (tot->map[play->y][play->x + 1] == 'E')
         check_coll = check_avail_exit(tot, play);
     if (check_coll == 0)

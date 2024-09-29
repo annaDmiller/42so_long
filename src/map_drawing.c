@@ -25,7 +25,6 @@ void	draw_map(t_total *tot)
 		}
 		y++;
 	}
-	ft_printf("Number of steps: %u\n", g_steps);
 	return ;
 }
 
