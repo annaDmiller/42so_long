@@ -40,7 +40,7 @@ static void	validate_size(char **map)
 	height_y = 0;
 	while (map[height_y])
 		height_y++;
-	if (height_y > HEIGHT_MAX / 30 && len_x > LENGTH_MAX  / 30)
+	if (height_y > HEIGHT_MAX / 30 || len_x > LENGTH_MAX  / 30)
 	{
 		ft_free_arr(map);
 		error("Incorrect map: max size of map is 64x34\n");
