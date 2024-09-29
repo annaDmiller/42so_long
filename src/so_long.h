@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amelniko <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/29 12:49:53 by amelniko          #+#    #+#             */
+/*   Updated: 2024/09/29 12:50:22 by amelniko         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # include "../libft/libft.h"
@@ -74,13 +86,13 @@ int		button_logic(int keycode, t_total *total);
 int		button_cross_logic(t_total *total);
 void	draw_map(t_total *total);
 void	free_map_img(t_map_img *map_img, void *mlx, int check);
-void    player_move_up(t_total *tot);
-void    player_move_down(t_total *tot);
-void    player_move_left(t_total *tot);
-void    player_move_right(t_total *tot);
-t_point *find_player(t_total *tot);
-int check_avail_exit(t_total *tot, t_point *play);
-void    err_arr(char *mess, char **map);
-void    err_screen(char *mess, t_total *tot, int check);
-void    succ_exit(char *mess, t_total *tot);
+void	player_move_up(t_total *tot);
+void	player_move_down(t_total *tot);
+void	player_move_left(t_total *tot);
+void	player_move_right(t_total *tot);
+t_point	*find_player(t_total *tot);
+int		check_avail_exit(t_total *tot, t_point *play);
+void	err_arr(char *mess, char **map);
+void	err_screen(char *mess, t_total *tot, int check);
+void	succ_exit(char *mess, t_total *tot);
 #endif

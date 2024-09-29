@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   screen_creation.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amelniko <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/29 12:48:02 by amelniko          #+#    #+#             */
+/*   Updated: 2024/09/29 12:49:10 by amelniko         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 static void	window_init(t_total *tot);
@@ -32,7 +44,8 @@ static void	window_init(t_total *tot)
 	tot->mlx->mlx = mlx_init();
 	if (!tot->mlx->mlx)
 		err_arr("Screen creation error\n", tot->map);
-	tot->mlx->win = mlx_new_window(tot->mlx->mlx, len_x * 30, height_y * 30, "SO_LONG GAME");
+	tot->mlx->win = mlx_new_window(tot->mlx->mlx, len_x * 30,
+			height_y * 30, "SO_LONG GAME");
 	if (!tot->mlx->win)
 	{
 		mlx_destroy_display(tot->mlx->mlx);
